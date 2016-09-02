@@ -33,3 +33,22 @@ footer {
   padding: 10%;
   margin: 0 auto;
 }
+
+/*  #reset-button, #message and #alerts styling  */
+#reset-button {
+  clear: both;
+  background-color: transparent;
+  border: 3px groove black;
+  border-radius: 50%;
+  padding: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+#message {
+  margin-bottom: 0;
+}
+
+#alerts {
+  padding-bottom: 30px;
+}
