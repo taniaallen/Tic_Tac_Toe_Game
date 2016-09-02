@@ -21,3 +21,56 @@
 
 	// var playerOne will be an array that will store the class of the tile clicked by player 'X'
 	// var playerTwo will be an array that will store the class of the tile clicked by player 'O'
+
+window.onload = function() {
+  // console.log('page loaded');
+
+  // When the "New Game" button is clicked, the newGame() function is invoked.
+  var newGameButton = document.querySelector('button');
+  newGameButton.onclick = function() {
+    newGame();
+  }
+}
+
+// Global variable to track the current turn, starting with "X"
+var currentTurn = "X";
+
+// Object to track what currentTurn variable is stored on the board square.
+var squares = {
+  0: '',
+  1: '',
+  2: '',
+  3: '',
+  4: '',
+  5: '',
+  6: '',
+  7: '',
+  8: ''
+}
+
+function newGame() {
+  // console.log('new game button clicked!');
+  // Clear the board (squares object) of any X's and O's
+  squares = {
+    0: '',
+    1: '',
+    2: '',
+    3: '',
+    4: '',
+    5: '',
+    6: '',
+    7: '',
+    8: ''
+  }
+
+  var message = document.getElementById('message');
+  var div = document.getElementsByClassName('board-square');
+
+  for(var i = 0; i < div.length; i++) {
+    div[i].innerHTML = "";
+    // console.log('cleared board!');
+    div[i].setAttribute('data-value', i);
+    message.innerHTML = "It\'s " + currentTurn + "\'s turn";
+    div[i].addEventListener('click', pickTile);
+  }
+}
