@@ -1,3 +1,16 @@
+/*  Base style of the page. Will contain the font-family to be used
+as well as the overall background styling and header styling */
+
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+
 * {
-  color: red;
+  font-family: 'Walter Turncoat', cursive;
 }
+
+/* Background image styling  */
+body {
+  background: url("../img/lined-paper-pattern.png");
+  text-align: center;
+}
+
+/* Header styling  */
