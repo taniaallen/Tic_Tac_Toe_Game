@@ -91,3 +91,33 @@ footer {
 .bottom-right {
   border-left: 2px solid black;
 }
+
+/* Media queries should be defined at the bottom to adjust size of images when viewport reduced.
+font-size of X's and O's should change with screen size to be proportionate */
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  #reset-button {
+    margin-bottom: 10px;
+  }
+
+  .board-square {
+    height: 90px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 25px;
+  }
+
+  footer {
+    font-size: 15px;
+    padding: 10%;
+  }
+  
+}
