@@ -52,3 +52,42 @@ footer {
 #alerts {
   padding-bottom: 30px;
 }
+
+/*  div styling: will need to style each div with border styling to represent each grid. */
+#wrapper {
+  overflow: hidden;
+  width: 80%;
+  margin: 1em auto 0;
+}
+
+.board-square {
+  display: block;
+  float: left;
+  height: 250px;
+  width: 32%;
+  padding: 40px;
+  box-sizing: border-box;
+  font-size: 100px;
+}
+
+.top-left, .mid-left {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.bottom-left {
+  border-right: 2px solid black;
+}
+
+.top-middle, .mid-middle {
+  border-bottom: 2px solid black;
+}
+
+.top-right, .mid-right {
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.bottom-right {
+  border-left: 2px solid black;
+}
