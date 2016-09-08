@@ -74,3 +74,32 @@ function newGame() {
     div[i].addEventListener('click', pickTile);
   }
 }
+
+function pickTile() {
+  // How many tiles can be played: 9
+  var message = document.getElementById('message');
+  var alert = document.getElementById('alerts');
+
+  if (this.innerText !== "") {
+    alert.innerText = "That\'s an illegal move. Please select an empty tile.";
+    return false;
+  }
+
+  var value = this.dataset.value;
+  squares[value] = currentTurn;
+  console.log(squares);
+
+  if (currentTurn === "X") {
+    this.innerText = 'X';
+    currentTurn = "O";
+  } else {
+    this.innerText = "O";
+    currentTurn = "X";
+  }
+
+  message.innerText = 'It\'s ' + currentTurn + '\'s turn';
+  alert.innerText = "";
+  checkForWin(this);
+}
+
+// A function will be created to check for a win everytime a tile is selected.
