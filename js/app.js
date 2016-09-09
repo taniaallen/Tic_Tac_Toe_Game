@@ -87,7 +87,7 @@ function pickTile() {
 
   var value = this.dataset.value;
   squares[value] = currentTurn;
-  console.log(squares);
+  // console.log(squares);
 
   if (currentTurn === "X") {
     this.innerText = 'X';
@@ -103,3 +103,40 @@ function pickTile() {
 }
 
 // A function will be created to check for a win everytime a tile is selected.
+function checkForWin() {
+  // Check placement in the object.
+  // Check diagonals first
+  if(squares[0] !== '' && squares[0] === squares[4] && squares[4] === squares[8]){
+    handleWin(squares[0]);
+  } else if (squares[2] !== '' && squares[2] === squares[4] && squares[4] === squares[6]) {
+    handleWin(squares[2]);
+  }
+  // Check rows
+  else if (squares[0] !== '' && squares[0] === squares[1] && squares[1] === squares[2]) {
+    handleWin(squares[0]);
+  } else if (squares[3] !== '' && squares[3] === squares[4] && squares[4] === squares[5]) {
+    handleWin(squares[3]);
+  } else if (squares[6] !== '' && squares[6] === squares[7] && squares[7] === squares[8]) {
+    handleWin(squares[6]);
+  }
+  // Check columns now
+  else if (squares[0] !== '' && squares[0] === squares[3] && squares[3] === squares[6]) {
+    handleWin(squares[0]);
+  } else if (squares[1] !== '' && squares[1] === squares[4] && squares[4] === squares[7]) {
+    handleWin(squares[1]);
+  } else if (squares[2] !== '' && squares[2] === squares[5] && squares[5] === squares[8]) {
+    handleWin(squares[2]);
+  }
+
+}
+
+function handleWin(winner) {
+  alert(winner + ' Wins!!!');
+  // Run newGame function to clear the board.
+  newGame();
+}
+// Action items:
+  // Does not show the winning tile actually being selected when the user clicks a winning spot.
+  // How can I visually show the user they won.
+  // How can I store the user names of player one and player two.
+  // How can I tally the wins for each user.
